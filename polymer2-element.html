@@ -1,0 +1,75 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="polymer2-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+
+    </style>
+    <h2>[[prop1]]!</h2>
+
+    <template is="dom-repeat" items="{{listado}}">
+        <div>
+          <div><b>[[item.titulo]]</b></div>
+          <div>[[item.descripcion]]</div>
+          <p></p>
+        </div>
+    </template>
+
+    <div class="btn-container">
+      <button on-click="fnLog">Aceptar</button>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * `polymer2-element`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class Polymer2Element extends Polymer.Element {
+      static get is() { return 'polymer2-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Listas'
+          },
+          display: {
+            type: Boolean,
+            value: true
+          },
+          listado: {
+            type: Array,
+            value: [
+              {
+                'titulo': 'Nombre', 'descripcion': 'Hector'
+              },
+              {
+                'titulo': 'Status', 'descripcion': 'Activo'
+              },
+              {
+                'titulo': 'Area', 'descripcion': 'Extranet'
+              }
+            ]
+          }
+        };
+      }
+
+      fnLog() {
+        console.log("fnLog on click");
+      }
+
+
+    }
+
+    window.customElements.define(Polymer2Element.is, Polymer2Element);
+  </script>
+</dom-module>
