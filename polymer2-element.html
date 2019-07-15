@@ -68,12 +68,9 @@
       }
 
       fnLog() {
-        //alert("fnLog on click");
-        this.dispatchEvent(new CustomEvent('clic-arreglo', {detail: 'perro'}));
+        console.log("perro");
+        this.dispatchEvent(new CustomEvent('clicarreglo', {detail: null}));
       }
-
-      
-
 
     }
 
