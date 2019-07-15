@@ -50,13 +50,16 @@
             type: Array,
             value: [
               {
-                'titulo': 'Nombre', 'descripcion': 'Hector'
+                'titulo': 'Nombre',
+                'descripcion': 'Hector'
               },
               {
-                'titulo': 'Status', 'descripcion': 'Activo'
+                'titulo': 'Status',
+                'descripcion': 'Activo'
               },
               {
-                'titulo': 'Area', 'descripcion': 'Extranet'
+                'titulo': 'Area',
+                'descripcion': 'Extranet'
               }
             ]
           }
@@ -64,8 +67,11 @@
       }
 
       fnLog() {
-        console.log("fnLog on click");
+        //alert("fnLog on click");
+        this.dispatchEvent(new CustomEvent('clic-arreglo', {detail: 'perro'}));
       }
+
+      
 
 
     }
