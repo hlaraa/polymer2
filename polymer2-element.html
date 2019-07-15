@@ -20,7 +20,8 @@
     </template>
 
     <div class="btn-container">
-      <button on-click="fnLog">Aceptar</button>
+      <button on-click="addArray">Add</button>
+      <button on-click="removeArray">Remove</button>
     </div>
 
   </template>
@@ -54,9 +55,12 @@
         };
       }
 
-      fnLog() {
-        console.log("perro");
-        this.dispatchEvent(new CustomEvent('click-arreglo', {detail: null}));
+      addArray() {
+        this.dispatchEvent(new CustomEvent('add-array', {detail: null}));
+      }
+
+      removeArray() {
+        this.dispatchEvent(new CustomEvent('remove-array', {detail: null}));
       }
 
     }
