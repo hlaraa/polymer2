@@ -57,6 +57,7 @@
 
       addArray() {
         this.dispatchEvent(new CustomEvent('add-array', {detail: null}));
+        console.log("llena:: " + JSON.stringify(this.listado));
       }
 
       removeArray() {
